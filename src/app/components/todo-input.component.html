@@ -1,0 +1,46 @@
+<form [formGroup]="todoForm" (ngSubmit)="addTask()">
+
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>
+                <input type="text" size="30" formControlName="description">
+                <span *ngIf="hasError('name')">
+                    Please enter task description
+                </span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Due Date:</td>
+            <td>
+                <input type="date" size="30" formControlName="dueDate">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Priority:</td>
+            <td>
+                <select formControlName="priority">
+                    <option value="Low" selected>Low</option>
+                    <option value="Med">Med</option>
+                    <option value="High">High</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit">Add</button>
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+
+
+<!-- <ng-template #noItems>
+    <h2> Your todo list is empty</h2>
+  </ng-template> -->
